@@ -175,3 +175,7 @@ variable "autoscaling_cpu_low_threshold" {
   default     = "40"
 }
 
+variable "container_insights_monitoring" {
+  description = "Defines enable/disable Cloudwatch Container Insights monitoring"
+  default     = "disabled"
+}

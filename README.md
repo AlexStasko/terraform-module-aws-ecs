@@ -75,6 +75,7 @@ EOF
 | security_groups | List of existing security groups to be reused if create_security_group is false | list | `[]` | no |
 | assign_public_ip | To assign or not public ip to task | string | `false` | no |
 | use_fargate_spot | To use or not spot tasks in Fargate | string | `false` | no |
+| container\_insights\_monitoring | Defines enable/disable Cloudwatch Container Insights monitoring | string | `disabled` | no |
 
 ### Container definitions default value
 
