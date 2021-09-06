@@ -76,6 +76,8 @@ EOF
 | assign_public_ip | To assign or not public ip to task | string | `false` | no |
 | use_fargate_spot | To use or not spot tasks in Fargate | string | `false` | no |
 | container\_insights\_monitoring | Defines enable/disable Cloudwatch Container Insights monitoring | string | `disabled` | no |
+| enable\_circuit\_breaker | Enable deployment circuit breaker | bool | false | no |
+| enable\_rollback | Enable deployment rollback with circuit breaker | bool | false | no |
 
 ### Container definitions default value
 
