@@ -104,7 +104,7 @@ variable "create_security_group" {
 }
 
 variable "security_groups" {
-  type = "list"
+  type = list
 }
 
 variable "assign_public_ip" {
