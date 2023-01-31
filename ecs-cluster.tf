@@ -43,10 +43,6 @@ resource "aws_ecs_task_definition" "this" {
   tags                  = merge(local.default_tags, var.tags)
 }
 
-data "aws_security_group" "this" {
-  id = module.security-group.this_security_group_id
-}
-
 resource "aws_ecs_service" "this" {
   name                               = "${var.service}-${var.environment}"
   cluster                            = local.ecs_cluster_id
@@ -65,7 +61,7 @@ resource "aws_ecs_service" "this" {
 
   network_configuration {
     subnets         = var.subnets
-    security_groups = var.create_security_group ? [data.aws_security_group.this.id] : var.security_groups.*.id
+    security_groups = var.create_security_group ? [module.security-group[0].this_security_group_id] : var.security_groups.*.id
     assign_public_ip = "${var.assign_public_ip}"
   }
 
